@@ -9,5 +9,11 @@ const app = express();
 // Sets the initial PORT
 const PORT = process.env.PORT || 4000;
 
+//Sets up the Express app to handle data parsing and serving
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+
 // The below code starts the server
 app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
