@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Tarmity/work_todos/issues"
   },
-  "homepage": "https://github.com/Tarmity/work_todos#readme"
+  "homepage": "https://github.com/Tarmity/work_todos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
