@@ -1,51 +1,60 @@
 // DEPENDENICES 
-// Series of npm packages that will be used to give the server functionality. 
-const express = require('express');
-const axios = require('axios')
+// // Series of npm packages that will be used to give the server functionality. 
+// const express = require('express');
+// const axios = require('axios')
 const fetch = require('node-fetch');
-const { response } = require('express');
 
-// EXPRESS CONFIGURATION
-// Tells node that we are creating an "express" server.
-const app = express();
+// fetch call for the users and there id 
+const userUrl = 'https://jsonplaceholder.typicode.com/users'
+const todosUrl = 'https://jsonplaceholder.typicode.com/todos'
 
-// Sets the initial PORT
-const PORT = process.env.PORT || 4000;
+async function getUsers() {
+    const response = await fetch (userUrl);
+    const users = await response.json();
+    return users
+}
 
-//Sets up the Express app to handle data parsing and serving.
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// The below code starts the server.
-app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
-
-const url = 'https://jsonplaceholder.typicode.com/users'
-
-// fetch call for the todo's 
-// let todos;
-async function catchTodos() {
-    const response = await fetch (url);
+async function getTodos() {
+    const response = await fetch (todosUrl);
     const todos = await response.json();
-    document.getElementById('data').src = todos
     return todos
 }
 
- const todoList = catchTodos()
+//  fetch call for the todos 
+async function getUsersTodos(username) {
+    try {
+        let users = await getUsers();
+        const user = users.find(u => u.username === username)
+        if (!user) {
+            throw new Error(`User with username of ${username} was not found in users list`)
+        }
+        
+        const todos = await getTodos();
 
-console.log(todoList)
+        let outstanding = 0;
+        let total = 0
+        todos.forEach(todo => {
+            if (todo.userId === user.id) {
+                total++
+            
+                if((todo.completed === false)){
+                    outstanding++
+                }
+            }
+        })
 
-// const todos = fetch(url)
-// .then(response => {
-//     console.log(response)
-//     return response.json()
-// })
-// .then(response => {
-//   console.log(response)
-//   todoList = response
-// })
-// // .then(data => todos = data)
-// // .then(todos.json)
-// let todoList = todos;
-// let userList;
-// console.log(`This is the ${todoList}`)
-// console.log(`WELL THIS IS THE TODOLIST ${userList}`)
+        console.log(`${username} has ${total} tasks of which ${outstanding} are uncompleted`)
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+
+const input = process.argv[2]
+if (!input) {
+    console.error("A username argument is required")
+} else {
+    getUsersTodos(input)
+}
+
+
