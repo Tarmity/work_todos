@@ -1,0 +1,19 @@
+{
+  "name": "work_todos",
+  "version": "1.0.0",
+  "description": "Work To do list for employees",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarmity/work_todos.git"
+  },
+  "author": "Tarmity Flassman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tarmity/work_todos/issues"
+  },
+  "homepage": "https://github.com/Tarmity/work_todos#readme"
+}
