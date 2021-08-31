@@ -1,26 +1,27 @@
 // DEPENDENICES 
 // // Series of npm packages that will be used to give the server functionality. 
-// const express = require('express');
-// const axios = require('axios')
+
 const fetch = require('node-fetch');
 
-// fetch call for the users and there id 
+// JSONPlaceholder API urls
 const userUrl = 'https://jsonplaceholder.typicode.com/users'
 const todosUrl = 'https://jsonplaceholder.typicode.com/todos'
 
+// fetch call for the users and there id 
 async function getUsers() {
     const response = await fetch (userUrl);
     const users = await response.json();
     return users
 }
 
+// async function to fetch todos 
 async function getTodos() {
     const response = await fetch (todosUrl);
     const todos = await response.json();
     return todos
 }
 
-//  fetch call for the todos 
+// async function to get User Todos  
 async function getUsersTodos(username) {
     try {
         let users = await getUsers();
