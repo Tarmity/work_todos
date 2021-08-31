@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/Tarmity/work_todos#readme",
   "dependencies": {
-    "body-parser": "^1.19.0"
+    "body-parser": "^1.19.0",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "express": "^4.17.1",
