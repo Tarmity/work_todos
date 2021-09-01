@@ -25,6 +25,7 @@
   "devDependencies": {
     "express": "^4.17.1",
     "install": "^0.13.0",
+    "jest": "^27.1.0",
     "nodemon": "^2.0.12",
     "npm": "^7.21.1"
   }
