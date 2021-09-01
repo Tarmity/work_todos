@@ -74,6 +74,8 @@ async function getUsersTodos(username) {
   }
 }
 
+exports.getUsersTodos = getUsersTodos;
+
 // Command Line arguement for the Terminal
 const input = process.argv[2];
 if (!input) {
