@@ -22,7 +22,7 @@
   ## Usage
   Once you have install all the dependencies use the below command for the applicatio to find the user and return thier outstanding Jobs and Jobs list.
   
-  node server.js <username>
+  npm install
   
    ![img](https://github.com/Tarmity/work_todos/blob/main/assets/username.png?raw=true)
   
