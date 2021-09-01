@@ -20,10 +20,11 @@
     npm install
 
   ## Usage
-  Once you have install all the dependencies use the below command for the applicatio to find the user and return thier outstanding Jobs and Jobs list.
+  Once you have install all the dependencies use the below command for the application to find a user and return thier outstanding Jobs and Jobs list.
   
-  npm install
-  
+  ```
+  node server.js <username>
+  ```
    ![img](https://github.com/Tarmity/work_todos/blob/main/assets/username.png?raw=true)
   
   ## License
