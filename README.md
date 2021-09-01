@@ -21,6 +21,17 @@
 
   ## Usage
   Once you have install all the dependencies use the below command for the application to find a user and return thier outstanding Jobs and Jobs list.
+  here are a list of usernames for the application to work:
+  - Bret
+  - Antonetee
+  - Samantha
+  - Karianne
+  - Kamren
+  - Leopoldo_Corkery
+  - Elwyn.Skiles
+  - Maxime_Nienow
+  - Delphine
+  - Moriah.Stanton
   
   ```
   node server.js <username>
