@@ -13,8 +13,8 @@ async function getUsers() {
   const users = await response.json();
   return users;
 }
-
-module.exports.getUsers = getUsers;
+// export the getUsers function for unit test
+exports.getUsers = getUsers;
 
 // async function to fetch todos
 async function getTodos() {
@@ -22,6 +22,9 @@ async function getTodos() {
   const todos = await response.json();
   return todos;
 }
+
+//export.getTodos function for unit testing purposes
+exports.getTodos = getTodos;
 
 // async function to get User Todos
 async function getUsersTodos(username) {
