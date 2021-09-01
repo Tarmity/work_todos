@@ -7,7 +7,7 @@ const fetch = require("node-fetch");
 const userUrl = "https://jsonplaceholder.typicode.com/users";
 const todosUrl = "https://jsonplaceholder.typicode.com/todos";
 
-// fetch call for the users and there id
+// async function to fetch call for the users and there id
 async function getUsers() {
   const response = await fetch(userUrl);
   const users = await response.json();
