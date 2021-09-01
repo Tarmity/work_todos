@@ -34,17 +34,27 @@ async function getUsersTodos(username) {
 
         let outstanding = 0;
         let total = 0
+        let jobTitle = []
+       
+        
         todos.forEach(todo => {
             if (todo.userId === user.id) {
                 total++
             
                 if((todo.completed === false)){
                     outstanding++
+                    jobTitle.push(todo.title)
                 }
             }
         })
 
-        console.log(`${username} has ${total} tasks of which ${outstanding} are uncompleted`)
+        console.log(`${username} has ${total} tasks of which ${outstanding} are uncompleted, \n Current outstanding jobs are:`)
+        //Loop to print the outstanding jobs to the console
+        jobTitle.forEach(job => {
+            let jobs = `- ${job}`;
+            console.log(jobs)
+       })
+       
     } catch (err) {
         console.error(err)
     }
