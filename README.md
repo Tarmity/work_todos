@@ -15,7 +15,7 @@
   
 
   ## Installation
-  Down all files, use the terminal to located the folder and install necessary dependencies by running the following command:
+  Down all files using the clone method. Using the terminal to located the folder and install necessary dependencies by running the following command:
   
     npm install
 
